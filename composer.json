@@ -4,7 +4,7 @@
   "type": "simplesamlphp-module",
   "license": "LGPL-2.1",
   "extra": {
-    "ssp-mixedcase-module-name": "skin-SIR2"
+    "ssp-mixedcase-module-name": "skin-sir2"
   },
   "require": {
     "simplesamlphp/composer-module-installer": "~1.0"
