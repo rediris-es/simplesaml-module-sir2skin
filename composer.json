@@ -1,0 +1,18 @@
+{
+  "name": "rediris-es/skin-sir2",
+  "description": "SIR2 simpleSAMLphp theme",
+  "type": "simplesamlphp-module",
+  "license": "LGPL-2.1",
+  "extra": {
+    "ssp-mixedcase-module-name": "skin-SIR2"
+  },
+  "require": {
+    "simplesamlphp/composer-module-installer": "~1.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/rediris-es/skin-sir2"
+    }
+  ]
+}
