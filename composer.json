@@ -1,5 +1,5 @@
 {
-  "name": "rediris-es/skin-sir2",
+  "name": "rediris-es/simplesamlphp-module-skin-sir2",
   "description": "SIR2 simpleSAMLphp theme",
   "minimum-stability": "stable",
   "type": "simplesamlphp-module",
