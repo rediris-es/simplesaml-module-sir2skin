@@ -6,6 +6,6 @@
   "license": "LGPL-2.1",
   "keywords": [ "simplesamlphp", "skin", "SIR2", "IdP" ],
   "require": {
-    "simplesamlphp/composer-module-installer": "~1.0"
+    "simplesamlphp/composer-module-installer": ">=1.0"
   }
 }
