@@ -1,6 +1,7 @@
 {
   "name": "rediris-es/simplesamlphp-module-sir2skin",
   "description": "SIR2 simpleSAMLphp theme",
+  "minimum-stability": "stable",
   "type": "simplesamlphp-module",
   "license": "LGPL-2.1",
   "extra": {
