@@ -244,7 +244,7 @@ dl dd {
 
 div.caution {
 	background-color:  #FF9;
-	background-image: url('icons/experience/gtk-dialog-warning.48x48.png');
+	background-image: url('/resources/icons/experience/gtk-dialog-warning.48x48.png');
 	background-repeat: no-repeat;
 	border: thin solid #444;
 	padding: .2em .2em .2em 60px;
