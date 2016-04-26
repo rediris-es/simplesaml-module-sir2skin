@@ -45,7 +45,7 @@ header('X-Frame-Options: SAMEORIGIN');
 <!-- Tema SIR -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-<script type="text/javascript" src="/<?php echo $this->data['baseurlpath']; ?>resources/script.js"></script>
+<script type="text/javascript" src="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/script.js'); ?>"></script>
 <title><?php
 if(array_key_exists('header', $this->data)) {
 	echo $this->data['header'];
@@ -54,13 +54,13 @@ if(array_key_exists('header', $this->data)) {
 }
 ?></title>
 
-	<link rel="stylesheet" type="text/css" href="/<?php echo $this->data['baseurlpath']; ?>resources/sir.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/sir.css'); ?>" />
 	<link rel="icon" type="image/icon" href="/<?php echo $this->data['baseurlpath']; ?>resources/icons/favicon.ico" />
 
 <?php
 
 if(!empty($jquery)) {
-	$version = '1.5';
+	$version = '1.8';
 	if (array_key_exists('version', $jquery))
 		$version = $jquery['version'];
 		
@@ -132,7 +132,7 @@ if($onLoad !== '') {
 <div id="wrap">
 	
 	<div id="header">
-		<img src="/<?php echo $this->data['baseurlpath']; ?>resources/logo-transp.png" align="left" valign="top" alt="SIR" height="60px" /><h1><a style="text-decoration: none; color: #3d8e9c; font-weight: bold; padding-left: 32px;" href="/<?php echo $this->data['baseurlpath']; ?>"><?php 
+		<img src="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/logo-transp.png'); ?>" align="left" valign="top" alt="SIR" height="60px" /><h1><a style="text-decoration: none; color: #3d8e9c; font-weight: bold; padding-left: 32px;" href="/<?php echo $this->data['baseurlpath']; ?>"><?php 
 			echo (isset($this->data['header']) ? $this->data['header'] : 'simpleSAMLphp'); 
 		?></a></h1>
 	</div>
