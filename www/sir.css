@@ -393,3 +393,8 @@ caption {
 		font-size: 50%;
 	}
 }
+.btn img,
+.btnaddonright img {
+max-height: 15px;
+max-width: 15px;
+}
