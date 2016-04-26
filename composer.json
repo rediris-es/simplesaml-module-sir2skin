@@ -3,6 +3,9 @@
   "description": "SIR2 simpleSAMLphp theme",
   "minimum-stability": "stable",
   "type": "simplesamlphp-module",
+  "extra": {
+        "ssp-mixedcase-module-name": "SIR2skin"
+  },
   "license": "LGPL-2.1",
   "keywords": [ "simplesamlphp", "skin", "SIR2", "IdP" ],
   "require": {
