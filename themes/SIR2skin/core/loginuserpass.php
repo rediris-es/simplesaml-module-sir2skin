@@ -29,9 +29,9 @@ if(array_key_exists('header', $this->data)) {
 }
 ?></title>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('SIR2skin/style.css'); ?>" />
-  <link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('SIR2skin/style_320.css'); ?>" />
-	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('SIR2skin/style_480.css'); ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/style.css'); ?>" />
+  <link rel="stylesheet" media="screen and (max-width: 370px)" href="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/style_320.css'); ?>" />
+	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/style_480.css'); ?>" />
 	
 	<script type="text/javascript">
 	function initiate(){
@@ -47,7 +47,7 @@ if(array_key_exists('header', $this->data)) {
 	
 		<!-- CABECERA CON LOGOTIPO Y HINT DE INTRODUCCION DE CONTRASEÑA -->
 		<div id="header">
-			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('SIR2skin/logo-transp.png'); ?>" alt="" /> <!-- DIT IS HET LOGO -->
+			<img id="logo" src="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/logo-transp.png'); ?>" alt="" /> <!-- DIT IS HET LOGO -->
 			<h1 class="mainTitle"></h1>				        <!-- TITULO -->
 			<ul class="langSelect">
 
@@ -104,11 +104,11 @@ if ($this->data['errorcode'] !== NULL) {
 }
 ?>				
 				<form id="login" method="POST" action="?" name="f">
-					<label for="username"><?php echo $this->t('{login:username}'); ?></label> <!-- <span class="example">(bv. 123456@catherijne.nl)</span> -->
+					<label for="username"><?php echo $this->t('{login:username}'); ?></label> 
 					<input type="text" name="username" id="username" value="<?php echo htmlspecialchars($this->data['username']); ?>" autocomplete= "off" />
 					<label for="password"><?php echo $this->t('{login:password}'); ?></label>
 					<input type="password" name="password" id="password" autocomplete= "off" />
-					<!-- <a href="#" class="recover">Wachtwoord vergeten?</a> -->
+					<!-- <a href="#" class="recover">¿Recuperar contraseña?</a> -->
 					<input onclick="this.value='Procesando...';this.disabled=true;this.form.submit();return true;" type="submit" value="<?php echo $this->t('{login:login_button}'); ?>" />
 
 <?php
@@ -129,8 +129,8 @@ foreach ($this->data['stateparams'] as $name => $value) {
                 <p>Este proveedor est&aacute; unido a las federaciones:</p>
                 <p>
                 <div id="logos">
-                 <a href="https://www.rediris.es/sir2" title="Federaci&oacute;n SIR2" alt="Federaci&oacute;n SIR2"><img id="logo-sir2" height="32px" src="<?php echo SimpleSAML_Module::getModuleURL('SIR2skin/logo-fed-sir2.png'); ?>" alt="SIR2" /></a>
-                 <a href="https://www.edugain.org" title="Interfederaci&oacute;n eduGAIN" alt="eduGAIN"><img id="logo-edugain" height="35px" src="<?php echo SimpleSAML_Module::getModuleURL('SIR2skin/logo-fed-eduGAIN.png'); ?>" alt="Federaci&oacute;n eduGAIN" /></a>
+                 <a href="https://www.rediris.es/sir2" title="Federaci&oacute;n SIR2" alt="Federaci&oacute;n SIR2"><img id="logo-sir2" height="32px" src="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/logo-fed-sir2.png'); ?>" alt="SIR2" /></a>
+                 <a href="https://www.edugain.org" title="Interfederaci&oacute;n eduGAIN" alt="eduGAIN"><img id="logo-edugain" height="35px" src="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/logo-fed-eduGAIN.png'); ?>" alt="Federaci&oacute;n eduGAIN" /></a>
                 </div>
 			  </div>
 
