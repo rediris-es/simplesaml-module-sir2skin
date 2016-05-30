@@ -45,7 +45,7 @@ header('X-Frame-Options: SAMEORIGIN');
 <!-- Tema SIR -->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
-<script type="text/javascript" src="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/script.js'); ?>"></script>
+<script type="text/javascript" src="/resources/script.js"></script>
 <title><?php
 if(array_key_exists('header', $this->data)) {
 	echo $this->data['header'];
