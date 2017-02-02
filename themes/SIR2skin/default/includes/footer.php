@@ -10,7 +10,7 @@ if(!empty($this->data['htmlinject']['htmlContentPost'])) {
 		<hr />
 
 		<a href="https://www.rediris.es/sir2"><img src="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/logo-fed-sir2.png'); ?>" alt="Small fish logo" style="float: right" /></a><img src="/<?php echo $this->data['baseurlpath']; ?>resources/icons/ssplogo-fish-small.png" alt="Small fish logo" style="float: right" />		
-		Copyright &copy; 2016 <a href="http://www.tuorganizacion.es/">Tu organización</a>
+		Copyright &copy; <?php echo date("Y"); ?> <a href="http://www.tuorganizacion.es/">Tu organización</a>
 		
 		<br style="clear: right" />
 	
