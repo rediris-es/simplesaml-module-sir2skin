@@ -57,9 +57,9 @@ if(array_key_exists('header', $this->data)) {
 	<link rel="stylesheet" type="text/css" href="<?php echo SimpleSAML_Module::getModuleURL('sir2skin/sir.css'); ?>" />
 	<link rel="icon" type="image/icon" href="/<?php echo $this->data['baseurlpath']; ?>resources/icons/favicon.ico" />
 
-	<script type="text/javascript" src="/wayf/resources/jquery-1.8.js"></script>
-	<script type="text/javascript" src="/wayf/resources/jquery-ui-1.8.js"></script>
-	<link rel="stylesheet" media="screen" type="text/css" href="/wayf/resources/uitheme1.8/jquery-ui.css" />
+	<script type="text/javascript" src="/<?php echo $this->data['baseurlpath']; ?>resources/jquery-1.8.js"></script>
+	<script type="text/javascript" src="/<?php echo $this->data['baseurlpath']; ?>resources/jquery-ui-1.8.js"></script>
+	<link rel="stylesheet" media="screen" type="text/css" href="/<?php echo $this->data['baseurlpath']; ?>resources/uitheme1.8/jquery-ui.css" />
 	
 <?php
 
