@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="googlebot" content="noarchive, nofollow" />
+	
+	<title>{{pagetitle}}</title>
+
+	<link rel="stylesheet" type="text/css" href="/module.php/sir2skin/style.css" />
+  	<link rel="stylesheet" media="screen and (max-width: 370px)" href="/module.php/sir2skin/style_320.css" />
+	<link rel="stylesheet" media="screen and (max-device-width: 480px), handheld" href="/module.php/sir2skin/style_480.css" />
+
+</head>
+
+<body class="storing">
+	<!-- DE WRAPPER CENTREERT DE CONTENT VAN DE WEBSITE -->
+	<div id="wrapper">
+	
+		<!-- HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
+		<div id="header">
+			<img id="logo" src="/module.php/sir2skin/logo-transp.png" alt="" />
+			<h1 class="mainTitle"></h1>
+			{% if not hideLanguageBar %}
+				<ul class="langSelect">				
+			    {% for lang in languageBar %}
+			        {%- if not loop.first -%}|{% endif -%}
+			        {% if lang.url %}
+			            <li><a href="{{ lang.url -}}
+			            {%- if queryParams %}&{% endif -%}
+			            {%- for name, value in queryParams -%}
+			                {%- if not loop.first %}&{% endif -%}
+			                {%- if value %}{{ name }}={{ value }}{% else %}{{ name }}{% endif -%}
+			            {%- endfor %}">{{ lang.name }}</a></li>
+			        {% else %}
+			            {{ lang.name }}
+			        {% endif %}
+
+			    {% endfor %}
+			    </ul>
+			{% endif %}
+		</div>
+		<!-- EINDE HEADER MET LOGO, EVENTUELE TITEL EN TAAL TOGGLE -->
+		
+		<div id="content">
+			<!-- CONTENT MET WITTE ACHTERGROND -->
+			<div class="item">
+				<h1>{{ (dictTitle)|trans }}</h1>
+				<p>
+					{{ (dictDescr)|trans }}
+					<!-- array con parameters -->
+					{% for param in parameters %}
+						{{param}}
+					{% endfor %}
+				</p>
+				<p>
+					{% trans '{errors:report_trackid}' %}
+					{{error.trackId}}
+				</p>		
+			</div>	
+			<!-- EINDE CONTENT MET WITTE ACHTERGROND -->			
+		</div>
+		
+		<!-- FOOTER -->
+<!--
+  		<div id="footer">
+			<p><a href="#">Help</a>  <a href="#"> Privacy Policy</a>  &copy; 2012 Catharijne college</p>
+		</div>
+-->
+		<!-- EINDE FOOTER -->
+	</div>
+</body>
+</html>

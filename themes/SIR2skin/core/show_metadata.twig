@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+{% block content %}
+	<div class="metadatabox">
+	    <button data-clipboard-target="#metadata" id="btncp" class="btn topright" style="margin-right: 0.5em;">
+	        <img src="/{{baseurlpath}}resources/icons/clipboard.svg" alt="Copy to clipboard" />
+	    </button>
+	    <pre id="metadata">
+	$metadata['{{m['metadata-index']}}'] => array (
+{% for key, metadata in m %}
+{% if key != 'metadata-index' %}
+&#9;'{{key}}' => '{{metadata}}',
+{% endif %}
+{% endfor %}
+&#9;)
+	    </pre>
+	</div>
+	<script type="text/javascript">
+	    var clipboard = new Clipboard('#btncp');
+	</script>
+	<br/>
+	<p><a href="{{backlink}}"><span class="btn">Back</span></a></p>
+
+{% endblock content %}
+

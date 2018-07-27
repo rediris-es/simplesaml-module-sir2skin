@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+{% block content %}
+
+	<h2>{% trans '{core:no_cookie:header}' %}</h2>
+	<p>{% trans '{core:no_cookie:description}' %}</p>
+
+
+	{% if retryURL is not null %}
+		<ul>
+	    	<li><a href="{{retryURL}}" id="retry">{{retryURL}}</a></li>
+	    </ul>
+	{% endif %}
+
+{% endblock content %}

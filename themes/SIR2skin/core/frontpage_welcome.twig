@@ -1,0 +1,42 @@
+
+{% set pagetitle =  '{core:frontpage:page_title}' | trans %}
+{% extends "base.twig" %}
+{% block content %}
+
+<div id="portalmenu" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+        <ul class="tabset_tabs ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+            <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#">Welcome</a></li>
+            <li class="ui-state-default ui-corner-top"><a href="{{baseurlpath}}/module.php/core/frontpage_config.php">Configuration</a></li>
+            <li class="ui-state-default ui-corner-top"><a href="{{baseurlpath}}/module.php/core/frontpage_auth.php">Authentication</a></li>
+            <li class="ui-state-default ui-corner-top"><a href="{{baseurlpath}}/module.php/core/frontpage_federation.php">Federation</a></li>
+        </ul>
+        <div id="portalcontent" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+
+            {% if isadmin is not null %}
+				<p class="float-r youareadmin">{% trans '{core:frontpage:loggedin_as_admin}' %}</p>
+			{% else %}
+				<p class="float-r youareadmin"><a href="{{loginurl}}">{% trans '{core:frontpage:login_as_admin}' %}</a></p>
+			{% endif %}
+
+
+			<p>{% trans '{core:frontpage:intro}' %}</p>
+
+
+			<ul>
+
+			{% for key, link in links_welcome %}
+				<li><a href="{{link.href | e}}">{{ (link.text)|trans | raw}}</a></li>
+			{% endfor %}		
+
+
+			</ul>
+				
+			<h2>{% trans '{core:frontpage:about_header}' %}</h2>
+			<p>{% trans '{core:frontpage:about_text}' %}</p>
+
+            
+        </div>
+    </div>
+
+
+{% endblock content %}			

@@ -1,0 +1,67 @@
+{% set pagetitle =  ('{admin:'~headerString~'}') | trans %}
+{% extends "base.twig" %}
+{% block content %}
+
+    <h2>{{ pagetitle }}</h2>
+    <p>{{ (metadata_intro)|trans }}</p>
+
+    {% if metaurl is not null %}
+        <p>{{ '{admin:metadata_xmlurl}' |trans({'%METAURL%': metaurl}) |raw }}</p>
+        <div class="input-group">
+            <pre id="metadataurl" class="input-left">{{metaurl}}</pre>
+            <button data-clipboard-target="#metadataurl" id="btnurl" class="btnaddonright">
+                <img src="/{{baseurlpath}}resources/icons/clipboard.svg"
+                     alt="Copy to clipboard" />
+            </button>
+        </div>
+    {% endif %}
+
+    <h2>{% trans '{admin:metadata_metadata}' %}</h2>
+    <p>{% trans '{admin:metadata_xmlformat}' %}</p>
+    <div class="metadatabox">
+         <button data-clipboard-target="#xmlmetadata" id="btnxml" class="btn topright" style="margin-right: 0.5em;">
+            <img src="/{{baseurlpath}}resources/icons/clipboard.svg"
+                 alt="Copy to clipboard" />
+        </button>
+        <pre id="xmlmetadata">{{metadata | raw}}</pre>
+    </div>
+
+    <p>{% trans '{admin:metadata_simplesamlformat}' %}</p>
+    <div class="metadatabox">
+        <button data-clipboard-target="#phpmetadata" id="btnphp" class="btn topright" style="margin-right: 0.5em;">
+            <img src="/{{baseurlpath}}resources/icons/clipboard.svg"
+                 alt="Copy to clipboard" />
+        </button>
+        <pre id="phpmetadata">{{metadataflat | raw}}</pre>
+    </div>
+    <script type="text/javascript">
+        var clipboard1 = new Clipboard('#btnurl'),
+            clipboard2 = new Clipboard('#btnxml'),
+            clipboard3 = new Clipboard('#btnphp');
+    </script>
+
+    {% if available_certs is not null %}
+        <h2>{% trans '{admin:metadata_cert}' %}</h2>
+        <p>{% trans '{admin:metadata_cert_intro}' %}</p>
+        <ul>
+
+            {% for certName, val in available_certs %}
+
+                <li>
+                    <a href="/module.php/saml/idp/certs.php/{{certName}}">{{certName}}</a>
+
+                    {% if available_certs[certName].certFingerprint[0] == 'afe71c28ef740bc87425be13a2263d37971da1f9' %}
+                        &nbsp; 
+                        <img style="display: inline;" src="/{{baseurlpath}}resources/icons/silk/exclamation.png" alt="default certificate" />
+                             This is the default certificate. Generate a new certificate if this is a production system.
+                    {% endif %}
+
+                </li>
+
+            {% endfor %}
+
+        </ul>
+    {% endif %}
+
+
+{% endblock content %}
