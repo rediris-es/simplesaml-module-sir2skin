@@ -1,0 +1,67 @@
+ <div class="login-info">
+    {% if isadmin %}
+    <p class="youareadmin">{{ '{core:frontpage:loggedin_as_admin}'|trans }}</p>
+    {% else %}
+    <p class="youareadmin">
+        <a href="{{ loginurl }}">{{ '{core:frontpage:login_as_admin}'|trans }}</a>
+    </p>
+    {% endif %}
+</div>
+{% if not hideLanguageBar -%}
+    <div id="languagebar">
+        <div id="menu">
+            <div class="pure-menu">
+                <ul class="pure-menu-list">
+                {% for key, lang in languageBar -%}
+                    {% if key == currentLanguage -%}
+                    <a class="pure-menu-heading" href="#">{{ lang.name }}</a>
+                    {% else -%}
+                    {% if lang.url -%}
+                    <li class="pure-menu-item"><a href="{{ lang.url }}{%- spaceless %}
+                        {% if queryParams -%}&{% endif -%}
+                            {% for name, value in queryParams -%}
+                                {%- if not loop.first %}&{% endif -%}
+                                {%- if value %}{{ name }}={{ value }}{% else %}{{ name }}{%- endif %}
+                            {%- endfor %}"{% endspaceless %} class="pure-menu-link">{{ lang.name }}</a></li>
+                        {% endif -%}
+                    {% endif -%}
+                {% endfor -%}
+                </ul>
+            </div>
+        </div>
+    </div>
+{%- endif %}
+<div id="mobile-menu">
+  <div id="main-menu">
+    <div class="pure-menu">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item {% if frontpage_section == "welcome" %} pure-menu-selected{% endif %}">
+          <a href="frontpage_welcome.php" class="pure-menu-link">Welcome</a></li>
+        <li class="pure-menu-item {% if frontpage_section == "config" %} pure-menu-selected{% endif %}">
+          <a href="frontpage_config.php" class="pure-menu-link">Configuration</a></li>
+        <li class="pure-menu-item {% if frontpage_section == "auth" %} pure-menu-selected{% endif %}">
+          <a href="frontpage_auth.php" class="pure-menu-link">Authentication</a></li>
+        <li class="pure-menu-item {% if frontpage_section == "federation" %} pure-menu-selected{% endif %}">
+          <a href="frontpage_federation.php" class="pure-menu-link">Federation</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<h1 class="title-mobile pagetitle">{{ pagetitle }}</h1>
+<div class="pure-g frontpage-menu">
+  <div class="pure-u-2-3">
+    <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item {% if frontpage_section == "welcome" %} pure-menu-selected{% endif %}">
+        <a href="frontpage_welcome.php" class="pure-menu-link">Welcome</a></li>
+      <li class="pure-menu-item {% if frontpage_section == "config" %} pure-menu-selected{% endif %}">
+        <a href="frontpage_config.php" class="pure-menu-link">Configuration</a></li>
+      <li class="pure-menu-item {% if frontpage_section == "auth" %} pure-menu-selected{% endif %}">
+        <a href="frontpage_auth.php" class="pure-menu-link">Authentication</a></li>
+      <li class="pure-menu-item {% if frontpage_section == "federation" %} pure-menu-selected{% endif %}">
+        <a href="frontpage_federation.php" class="pure-menu-link">Federation</a></li>
+    </ul>
+    </div>
+  </div>
+</div>
+

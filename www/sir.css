@@ -12,6 +12,14 @@ hr {
 	clear: both;
 }
 
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
 /* LINKS */
 a, a:link, a:link, a:link, a:hover {
 
@@ -64,13 +72,28 @@ dt {
 	background: #fff url("header-bkg-rediris.png") repeat-x 0 100%;
 }
 
+#header img.logo{
+	width: 100%;
+}
+
 #header .logo-header>div{
 	display: inline-flex;
 }
 
-#header h1{
+h1.pagetitle{
 	margin: 0;
+	text-decoration: none;
+    color: #3d8e9c;
+    font-weight: bold;
 	font-size: 24px;
+	padding: 10px;
+}
+
+.login-info{
+	text-align: right;
+	margin-top: -20px;
+	font-size: 10px;
+	line-height: 1;
 }
 
 #footer {
@@ -339,6 +362,7 @@ label, span.example{
 
 .pure-form input[type="password"], .pure-form input[type="email"], .pure-form input[type="url"], .pure-form input[type="date"], .pure-form input[type="month"], .pure-form input[type="time"], .pure-form input[type="datetime"], .pure-form input[type="datetime-local"], .pure-form input[type="week"], .pure-form input[type="tel"], .pure-form input[type="color"], .pure-form input[type="number"], .pure-form input[type="search"], .pure-form input[type="text"].pure-form input, .pure-form textarea, input, button, textarea {
 	height: 30px;
+    max-width: 100%;
 	border: 1px solid #298f9b;
 	margin: 5px 0 0 0;
 	display: inline-block;
@@ -351,7 +375,7 @@ label, span.example{
 	height: auto;
 }
 
-input[type="submit"], input[type="button"], button, .pure-button-red{
+/*input[type="submit"], input[type="button"], button, .pure-button-red{
 	width: auto;
 	background: #298f9b;
 	border: 1px solid #298f9b;
@@ -367,7 +391,7 @@ input[type="submit"]:hover, input[type="button"]:hover, button:hover, .pure-butt
 input[type="submit"]:active, input[type="button"]:active, button:active, .pure-button-red{
 	box-shadow: 0 1px #999;
 	transform: translateY(2px);
-}
+}*/
 
 
 span.example{
@@ -378,16 +402,166 @@ span.example{
 }
 
 .idpinstaller_step:after{
-  content: "";
-  clear: both;
-  display: table;
+  	content: "";
+  	clear: both;
+  	display: table;
 }
 
-.pure-button-red{
-	background
+#layout.active #main-menu {
+    right: 11em;
+    width: 11em;
+}
+
+#menu{
+	display: none;
+}
+
+#menu, #main-menu{
+	background: #CCCCCC;
+}
+
+#menu .pure-menu li a:hover, #menu .pure-menu li a:focus {
+    background: #CCCCCC;
+}
+#menu a {
+    color: #000000;
+    border: none;
+    padding: .5em 1em;
+}
+
+#menu .pure-menu-heading {
+    font-size: 100%;
+    color: #000000;
+    margin: 0;
+}
+#menu .pure-menu-selected, #menu .pure-menu-heading {
+    background: #CCCCCC;
+    color: #298F9B;
+}
+
+#menu.active{
+	display: block;
+}
+
+#main-menu {
+    margin-right: -11em;
+    width: 11em;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    display: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+#main-menu .pure-menu, #main-menu .pure-menu ul {
+    border: none;
+    background: transparent;
+}
+
+#main-menu .pure-menu ul, #main-menu .pure-menu .menu-item-divided {
+    border-top: 1px solid #db0100;
+}
+#main-menu .pure-menu, #main-menu .pure-menu ul {
+    border: none;
+    background: transparent;
+}
+
+
+#main-menu{
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#main-menu.active{
+	display: block;
+}
+
+#menuLink.menu-link.active {
+    position: static;
+    right: 0;
+}
+#layout.active .menu-link {
+    right: 0;
 }
 
 .pure-button{
 	padding: 0 5px;
 }
+
+
+.title-desktop{
+	display: block;
+}
+
+.title-mobile{
+	display: none;
+}
+
+.frontpage-menu{
+	display: block;
+}
+
+#menuLinkBar{
+	display: none;
+}
+
+
+.menu-link span {
+    color: #333;
+}
+
+@media (max-width: 800px) { 
+
+	#footer-organization{
+		width: 100%;
+		text-align: center;
+	}
+
+	#footer-sir2, #footer-simplesamlphp{
+		width: 50%;
+		text-align:center;
+	}
+
+}
+
+@media (max-width: 420px) { 
+
+	#footer-organization, #footer-sir2, #footer-simplesamlphp{
+		width: 100%;
+		text-align: center;
+	}
+
+	#footer-sir2 img, #footer-simplesamlphp img{
+		margin: 5px auto;
+	}
+
+}
+
+@media (max-width: 600px) { 
+
+	#menuLinkBar{
+		display: block;
+	}
+
+	.title-desktop{
+		display: none;
+	}
+
+	.title-mobile{
+		display: block;
+	}
+
+	.frontpage-menu{
+		display: none;
+	}
+
+}
+
+
 
