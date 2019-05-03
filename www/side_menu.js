@@ -92,7 +92,6 @@
         console.log(e.target.nodeName);
 
 		if(isActiveElement==true && e.target.nodeName!="A" && e.target.nodeName!="BUTTON" && e.target.nodeName!="INPUT"){
-			
         	resetToggle(e);
 		}
     };

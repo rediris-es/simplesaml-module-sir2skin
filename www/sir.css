@@ -1,3 +1,27 @@
+/* these styles are in the head of this page because this is a unique page */
+
+/* THE BIG GUYS */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: center;
+	padding: 10px 0;
+        background: #d5d5d5 url(//www.rediris.es/template/w4/mm/wb4_body_bg.gif) repeat-x scroll left top;
+/*	background-image: url(icons/ssplogo-fish.png);
+	background-repeat: no-repeat; */
+	color: #333;
+	font: 83%/1.5 arial,tahoma,verdana,sans-serif;
+}
+
+.body-embed {
+	padding: 0;
+	background: #ffffff;
+	font: 83%/1.5 arial,tahoma,verdana,sans-serif;
+}
+
 img {
 	border: none;
 	display: block;
@@ -10,14 +34,6 @@ hr {
 	color: #eee;
 	border: none;
 	clear: both;
-}
-
-pre {
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 /* LINKS */
@@ -68,51 +84,59 @@ dt {
 	font-weight: bold;
 }
 
+#wrap {
+	background: #fff;
+	
+	padding: 15px;
+	border: 1px solid #d6d6d6;
+	position: relative;
+	text-align: left;
+	
+	margin: 20px 75px 2em 75px;
+	max-width: 90%;
+}
+
+#languagebar {
+	padding-left: 10px;
+	padding-right: 10px;
+        text-align: right;
+}
+#languagebar a:link, #languagebar a:visited {
+	text-decoration: none;
+	color: #777;
+	border-bottom: 1px dotted #ccc;
+	font-weight: normal;
+}
+#languagebar a:hover {
+	text-decoration: none;
+	color: #333;
+	border-bottom: 1px solid #333;
+	
+}
+
 #header {
 	background: #fff url("header-bkg-rediris.png") repeat-x 0 100%;
+	margin: 0px;
+	padding: 0 0 8px;
 }
 
-#header img.logo{
-	width: 100%;
-}
-
-#header .logo-header>div{
-	display: inline-flex;
-}
-
-h1.pagetitle{
-	margin: 0;
-	text-decoration: none;
-    color: #3d8e9c;
-    font-weight: bold;
-	font-size: 24px;
-	padding: 10px;
-}
-
-.login-info{
-	text-align: right;
-	margin-top: -20px;
-	font-size: 10px;
-	line-height: 1;
-}
-
-#footer {
-	background: none;
-	border-top: 1px solid #DDD;
-	text-align: left;
-}
-
-#logo span {
-	color: #3d8e9c;
+#header h1 {
+	color: #fff;
+	font-size: 145%;
 	padding-top: 30px;
 	padding-right: 10px;
 	padding-bottom: 12px;
 	padding-left: 10px;
 }
 
+
+#content, #footer {
+	padding: 0 20px;
+}
+
 /* TYPOGRAPHY */
 p, ul, ol {
-	margin: 0;
+	margin: 0 0 1.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -120,36 +144,35 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: arial,verdana,sans-serif;
 	margin: 1.2em 0 .3em;
 	color: #000;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #eee;
 	padding-bottom: .1em;
 }
 
 h1 {
-	font-size: 32px;
+	font-size: 196%;
 	margin-top: 0;
 	border: none;
 }
 
 h2 {
-	font-size: 28px;
+	font-size: 136%;
 }
 
 h3 {
-	font-size: 24px;
+	font-size: 126%;
 }
 
 h4 {
-	font-size: 20px;
+	font-size: 116%;
 	font-weight: bold;
 }
 
 h5 {
-	font-size: 16px;
+	font-size: 106%;
 }
 
 h6 {
-	font-size: 12px;
-	font-weight: bold;
+	font-size: 96%;
 }
 
 h1 a {
@@ -160,6 +183,10 @@ h1 a {
 
 h1 a:hover {
 	border-bottom: 1px dotted #eee;
+}
+
+#content {
+	margin-top: 2em;
 }
 
 .old {
@@ -174,14 +201,6 @@ dl dd {
 	color: #666;
 	margin-left: 3em;
 /*	font-family: monospace; */
-}
-
-.pure-menu li.pure-menu-selected a.pure-menu-link{
-   	color: #298F9B;
-}
-
-.pure-menu a.pure-menu-link{
-   	color: #000;
 }
 
 .efieldlist {
@@ -313,7 +332,6 @@ fieldset.fancyfieldset {
 	margin: 2em 1em 1em 0px;
 	border: 1px solid #bbb;
 }
-
 fieldset.fancyfieldset legend {
 	margin-left: 2em;
 	padding: 3px 2em 3px 2em;
@@ -345,223 +363,38 @@ caption {
 	display: none;
 }
 
-
-/* FORMS */
-
-input, select {
-    vertical-align:middle;
-}
-
-input[type="submit"], ul.langSelect, div.example{
-	float: right;
-}
-
-label, span.example{
-	margin: 10px 0 0 0;
-}
-
-.pure-form input[type="password"], .pure-form input[type="email"], .pure-form input[type="url"], .pure-form input[type="date"], .pure-form input[type="month"], .pure-form input[type="time"], .pure-form input[type="datetime"], .pure-form input[type="datetime-local"], .pure-form input[type="week"], .pure-form input[type="tel"], .pure-form input[type="color"], .pure-form input[type="number"], .pure-form input[type="search"], .pure-form input[type="text"].pure-form input, .pure-form textarea, input, button, textarea {
-	height: 30px;
-    max-width: 100%;
-	border: 1px solid #298f9b;
-	margin: 5px 0 0 0;
-	display: inline-block;
-	box-shadow: inset 0 1px 3px #8abfb3;
-	vertical-align: middle;
-	padding: 0 5px;
-}
-
-.pure-form textarea, textarea{
-	height: auto;
-}
-
-/*input[type="submit"], input[type="button"], button, .pure-button-red{
-	width: auto;
-	background: #298f9b;
-	border: 1px solid #298f9b;
-	cursor: pointer;
-	color: #f4d502;
-	box-shadow: 0 3px #999;
-}
-
-input[type="submit"]:hover, input[type="button"]:hover, button:hover, .pure-button-red:hover{
-	background-color: #14555d;
-}
-
-input[type="submit"]:active, input[type="button"]:active, button:active, .pure-button-red{
-	box-shadow: 0 1px #999;
-	transform: translateY(2px);
-}*/
-
-
-span.example{
-	margin-left: 10px;
-	font-size: 13px;
-	font-style: italic;
-	color: gray;
-}
-
-.idpinstaller_step:after{
-  	content: "";
-  	clear: both;
-  	display: table;
-}
-
-#layout.active #main-menu {
-    right: 11em;
-    width: 11em;
-}
-
-#menu{
-	display: none;
-}
-
-#menu, #main-menu{
-	background: #CCCCCC;
-}
-
-#menu .pure-menu li a:hover, #menu .pure-menu li a:focus {
-    background: #CCCCCC;
-}
-#menu a {
-    color: #000000;
-    border: none;
-    padding: .5em 1em;
-}
-
-#menu .pure-menu-heading {
-    font-size: 100%;
-    color: #000000;
-    margin: 0;
-}
-#menu .pure-menu-selected, #menu .pure-menu-heading {
-    background: #CCCCCC;
-    color: #298F9B;
-}
-
-#menu.active{
-	display: block;
-}
-
-#main-menu {
-    margin-right: -11em;
-    width: 11em;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000;
-    overflow-y: auto;
-    display: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-#main-menu .pure-menu, #main-menu .pure-menu ul {
-    border: none;
-    background: transparent;
-}
-
-#main-menu .pure-menu ul, #main-menu .pure-menu .menu-item-divided {
-    border-top: 1px solid #db0100;
-}
-#main-menu .pure-menu, #main-menu .pure-menu ul {
-    border: none;
-    background: transparent;
-}
-
-
-#main-menu{
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
-
-#main-menu.active{
-	display: block;
-}
-
-#menuLink.menu-link.active {
-    position: static;
-    right: 0;
-}
-#layout.active .menu-link {
-    right: 0;
-}
-
-.pure-button{
-	padding: 0 5px;
-}
-
-
-.title-desktop{
-	display: block;
-}
-
-.title-mobile{
-	display: none;
-}
-
-.frontpage-menu{
-	display: block;
-}
-
-#menuLinkBar{
-	display: none;
-}
-
-
-.menu-link span {
-    color: #333;
-}
-
-@media (max-width: 800px) { 
-
-	#footer-organization{
-		width: 100%;
-		text-align: center;
-	}
-
-	#footer-sir2, #footer-simplesamlphp{
-		width: 50%;
-		text-align:center;
-	}
-
-}
-
-@media (max-width: 420px) { 
-
-	#footer-organization, #footer-sir2, #footer-simplesamlphp{
-		width: 100%;
-		text-align: center;
-	}
-
-	#footer-sir2 img, #footer-simplesamlphp img{
-		margin: 5px auto;
-	}
-
-}
-
-@media (max-width: 600px) { 
-
-	#menuLinkBar{
-		display: block;
-	}
-
-	.title-desktop{
+@media handheld, only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+	#header, #languagebar, #footer, .erroricon, #loginicon, .logintext, #regularsubmit {
 		display: none;
 	}
-
-	.title-mobile{
-		display: block;
+	body {
+		font-size: 20px;
 	}
-
-	.frontpage-menu{
-		display: none;
+	#wrap {
+		margin: 0;
 	}
-
+	h1,h2,h3,h4 {
+		font-size: 110%;
+	}
+		
+	#content {
+		margin-bottom: 10px;
+		padding: 0;
+		padding-left: 5px;
+	}
+	input[type="text"], input[type="password"] {
+		height: 1.5em;
+		font-size: 1em;
+	}
+	#mobilesubmit {
+		display: inline;
+	}
+	.youareadmin {
+		font-size: 50%;
+	}
 }
-
-
-
+.btn img,
+.btnaddonright img {
+	max-height: 15px;
+	max-width: 15px;
+}
